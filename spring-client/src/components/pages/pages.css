@@ -1,0 +1,185 @@
+.shopping-cart-table{
+    margin-top: 5px;
+}
+
+.shopping-cart-table .total {
+    text-align: right;
+    font-size: 1.3rem;
+    margin-right: 10px;
+}
+
+.shopping-cart-table button{
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.ant-carousel .slick-slide {
+    text-align: center;
+    height: 160px;
+    line-height: 10px;
+    background: #364d79;
+    overflow: hidden;
+}
+
+.ant-carousel .slick-slide h3 {
+    color: #fff;
+}
+
+.slide {
+    width: 100%;
+    height: 500px;
+}
+
+.approach {
+    background-image: url("https://mfhf.com/wp-content/uploads/2018/08/approach.jpg");
+    background-size: 100%;
+    /*background-repe*/
+    height: 450px;
+
+}
+
+.approach:before {
+    content: "";
+    position:absolute;
+    width: 100%;
+    height: 450px;
+    background: rgba(0,0,0,0.5);
+}
+
+.approach img {
+    width: 100%;
+    height: 450px;
+    position: absolute;
+    display: flex;
+}
+
+.approach h2 {
+    position: absolute;
+    margin-top: 80px;
+    margin-left: 600px;
+}
+
+.approach p {
+    position: absolute;
+    margin-top: 200px;
+    margin-left: 150px;
+    margin-right: 100px;
+    font-size: 1.2rem;
+    color: black;
+}
+
+.approach .view {
+    position: absolute;
+    background-color: green;
+    margin-top: 300px;
+    margin-left: 620px;
+
+}
+
+.site-card-wrapper {
+    padding: 30px;
+}
+
+.members h2 {
+    margin-top: 80px;
+    text-align: center;
+}
+
+.map-container-section {
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.map-container-section iframe {
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+.partners {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.partner {
+    height: 150px;
+
+}
+
+.image {
+    width: 350px;
+    margin-top: 50px;
+    margin-left: 100px;
+}
+
+.image img {
+    max-width: 100%;
+}
+
+.goals {
+    width: 550px;
+    margin-top: 50px;
+    margin-left: 100px;
+}
+
+.center {
+    margin-left: 150px;
+}
+
+.cust {
+    margin-top: 80px;
+    height: 450px;
+    background-image: url("https://therightsofnature.org/wp-content/uploads/2018/01/turkey-3048299_1920.jpg");
+    padding-top: 80px;
+}
+
+.cust:before {
+    content: "";
+    position:absolute;
+    margin-top: -80px;
+    width: 100%;
+    height: 450px;
+    background: rgba(0,0,0,0.5);
+
+
+}
+
+.center-container {
+
+    display: block;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    border-radius: 5px;
+    background-color: aliceblue;
+    box-shadow: 5px 10px #888888;
+    width: 700px;
+    height: 250px;
+}
+
+.center-container h2 {
+
+    text-align: center;
+}
+.center-container h3 {
+    text-align: center;
+}
+
+.center-container p {
+    font-family: Arial;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.center-container h5 {
+    font-size: 0.7rem;
+    text-align: center;
+}
+
+.contact-us {
+    max-width: 100%;
+}
+

@@ -1,0 +1,36 @@
+
+.logo {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.5rem;
+    color: black;
+
+}
+
+
+
+.shopping-cart {
+    align-self: center;
+    font-size: 1rem;
+    padding-right: 1rem;
+    color: black;
+    position: fixed; /* Фиксированное положение */
+    right: 10px;
+}
+
+.shopping-cart .cart-icon{
+    font-size: 1.7rem;
+    color: black;
+    margin-right: 10px;
+}
+
+.auth {
+    align-self: center;
+    font-size: 2rem;
+    padding-right: 1rem;
+    color: black;
+    position: fixed; /* Фиксированное положение */
+    right: 100px;
+    font-size: 1.3rem;
+    margin-top: 15px;
+}
+
