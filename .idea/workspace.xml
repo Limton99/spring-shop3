@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5052b1cd-3a36-44c9-8c0a-08c0633f9b06" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/spring-client/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/admin-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/admin-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-client/node_modules/.cache/babel-loader/3359feb93f326cdac7e18e0f91eb0367.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-client/node_modules/.cache/babel-loader/e3fdc113a3b8881b95f60bf1de433684.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-client/node_modules/.cache/babel-loader/f8a61a67b4088e028ebdaf4b98f21857.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-client/node_modules/antd/dist/antd-with-locales.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-client/node_modules/antd/dist/antd-with-locales.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-client/node_modules/antd/dist/antd.compact.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-client/node_modules/antd/dist/antd.dark.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-client/node_modules/antd/dist/antd.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-client/node_modules/antd/dist/antd.min.js.map" beforeDir="false" />
-    </list>
+    <list default="true" id="5052b1cd-3a36-44c9-8c0a-08c0633f9b06" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,6 +33,7 @@
       <option name="presentableId" value="Default" />
       <updated>1604575425622</updated>
       <workItem from="1604575430291" duration="64000" />
+      <workItem from="1604593549931" duration="281000" />
     </task>
     <servers />
   </component>
