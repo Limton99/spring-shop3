@@ -1,5 +1,7 @@
 package kz.iitu.adminservice.Controllers;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import kz.iitu.adminservice.Models.Product;
 import kz.iitu.adminservice.Models.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,7 @@ import org.springframework.web.client.RestTemplate;
 
 import javax.validation.Valid;
 import java.net.URI;
+import java.util.Arrays;
 
 @RestController
 @RequestMapping("/api/v1/admin/products")
@@ -31,11 +34,22 @@ public class ProductController {
 
 
     @GetMapping("/{id}")
+    @HystrixCommand(fallbackMethod = "getFallBackProduct",
+            threadPoolKey = "productInfoPool",
+            threadPoolProperties = {
+            @HystrixProperty(name = "coreSize", value = "20")
+            }
+    )
     public Product getProductById(@PathVariable Long id) {
         Product product = restTemplate.getForObject("http://product-service/api/v1/products/"+id, Product.class);
 
         return product;
     }
+
+    public Product getFallBackProduct(@PathVariable Long id) {
+        return new Product("No products", "", "");
+    }
+
 
     @PostMapping("/createProduct")
     public String createProduct(@ModelAttribute @Valid @RequestBody Product product){
