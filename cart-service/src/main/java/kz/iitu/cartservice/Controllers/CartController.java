@@ -1,5 +1,7 @@
 package kz.iitu.cartservice.Controllers;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import kz.iitu.cartservice.Models.Cart;
 import kz.iitu.cartservice.Models.Product;
 import kz.iitu.cartservice.Models.User;

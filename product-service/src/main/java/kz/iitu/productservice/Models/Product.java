@@ -24,6 +24,12 @@ public class Product {
     private String price;
     private String count;
 
+    public Product(String name, String price, String count) {
+        this.name = name;
+        this.price = price;
+        this.count = count;
+    }
+
 //    public Product(Long id, String name, String price, int count) {
 //        this.id = id;
 //        this.name = name;

@@ -1,13 +1,13 @@
 package kz.iitu.adminservice.Controllers;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
+import kz.iitu.adminservice.Models.Product;
 import kz.iitu.adminservice.Models.User;
 import kz.iitu.adminservice.Models.Users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
@@ -20,6 +20,13 @@ public class UserController {
     private RestTemplate restTemplate;
 
     @GetMapping("/list")
+    @HystrixCommand(fallbackMethod = "getFallBackUsers",
+            threadPoolKey = "userInfoPool",
+            threadPoolProperties = {
+                    @HystrixProperty(name = "coreSize", value = "20"),
+                    @HystrixProperty(name = "maxQueueSize", value = "20")
+            }
+    )
     public User[] getAllUsers() {
         ResponseEntity<User[]> response =
                 restTemplate.getForEntity(
@@ -27,6 +34,11 @@ public class UserController {
                         User[].class);
         User[] users = response.getBody();
 
+        return users;
+    }
+
+    public User[] getFallBackUsers() {
+        User[] users = new User[1];
         return users;
     }
 

@@ -3,7 +3,9 @@ package kz.iitu.productservice;
 import kz.iitu.productservice.Models.Product;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
 
 
 import java.util.ArrayList;
@@ -11,6 +13,8 @@ import java.util.List;
 
 @EnableEurekaClient
 @SpringBootApplication
+@EnableCircuitBreaker
+@EnableHystrixDashboard
 public class ProductServiceApplication {
 
     public static void main(String[] args) {

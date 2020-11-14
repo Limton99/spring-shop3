@@ -1,5 +1,7 @@
 package kz.iitu.productservice.Controllers;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import kz.iitu.productservice.Models.Product;
 import kz.iitu.productservice.ProductServiceApplication;
 import kz.iitu.productservice.Repository.ProductRepos;
@@ -34,15 +36,35 @@ public class ProductController {
     public ProductRepos productRepos;
 
     @GetMapping("/list")
+//    @HystrixCommand(fallbackMethod = "getFallBackProduct",
+//            threadPoolKey = "productInfoPool",
+//            threadPoolProperties = {
+//                    @HystrixProperty(name = "coreSize", value = "20"),
+//                    @HystrixProperty(name = "maxQueueSize", value = "20")
+//            }
+//    )
     Collection<Product> getProducts() {
         return productRepos.findAll(Sort.by(Sort.Direction.ASC, "id"));
     }
+
     @GetMapping("/{id}")
+//    @HystrixCommand(fallbackMethod = "getFallBackProduct",
+//            threadPoolKey = "productInfoPool",
+//            threadPoolProperties = {
+//                    @HystrixProperty(name = "coreSize", value = "20"),
+//                    @HystrixProperty(name = "maxQueueSize", value = "20")
+//            }
+//    )
     ResponseEntity<?> getProduct(@PathVariable Long id) {
         Optional<Product> product = productRepos.findById(id);
         return product.map(response -> ResponseEntity.ok().body(response))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
+
+//    public Product getFallBackProduct(@PathVariable Long id) {
+//        return new Product("No products", "", "");
+//    }
+
 
     @PostMapping("/createProduct")
     ResponseEntity<Product> createProduct(@ModelAttribute @Valid @RequestBody Product product) throws URISyntaxException {

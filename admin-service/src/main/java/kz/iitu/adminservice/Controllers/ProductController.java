@@ -22,6 +22,13 @@ public class ProductController {
     private RestTemplate restTemplate;
 
     @GetMapping("/list")
+    @HystrixCommand(fallbackMethod = "getFallBackProducts",
+            threadPoolKey = "productInfoPool",
+            threadPoolProperties = {
+                    @HystrixProperty(name = "coreSize", value = "20"),
+                    @HystrixProperty(name = "maxQueueSize", value = "20")
+            }
+    )
     public Product[] getAllProducts() {
         ResponseEntity<Product[]> response =
                 restTemplate.getForEntity(
@@ -32,12 +39,19 @@ public class ProductController {
         return products;
     }
 
+    public Product[] getFallBackProducts() {
+        Product[] products = new Product[1];
+        products[0]= new Product("No", "", "");
+        return products;
+    }
+
 
     @GetMapping("/{id}")
     @HystrixCommand(fallbackMethod = "getFallBackProduct",
             threadPoolKey = "productInfoPool",
             threadPoolProperties = {
-            @HystrixProperty(name = "coreSize", value = "20")
+                @HystrixProperty(name = "coreSize", value = "20"),
+                @HystrixProperty(name = "maxQueueSize", value = "20")
             }
     )
     public Product getProductById(@PathVariable Long id) {
