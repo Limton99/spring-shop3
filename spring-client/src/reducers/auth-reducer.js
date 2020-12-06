@@ -23,8 +23,8 @@ const updateAuth = (state, action) => {
                 username: null
             }
         case 'USER_LOGIN':
-            const payload = jwt_decode(action.payload)
-            if(payload.exp < new Date().getTime() / 1000) {
+            const payload = jwt_decode(localStorage.getItem('access_token'))
+            if(payload.exp < new Date().getTime() / 1000000) {
                 return {
                     signUpSuccess: false,
                     isAuth: false,
@@ -32,7 +32,7 @@ const updateAuth = (state, action) => {
                     username: null
                 }
             }
-            axios.defaults.headers.common["Authorization"] = `Bearer ${action.payload}`
+            axios.defaults.headers.common["Authorization"] = `Bearer ${localStorage.getItem('access_token')}`
             return {
                 signUpSuccess: false,
                 isAuth: true,

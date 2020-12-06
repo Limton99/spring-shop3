@@ -132,13 +132,19 @@ export const logIn = (user) => dispatch =>{
     Object.keys(user).map(key => {
         fm.append([key],user[key])
     })
-    console.log("FormData: " + fm.get('username'))
-    axios.post('/users/login', fm)
+    // console.log("FormData: " + fm.get('username'))
+    axios.post('/auth', {'username':'foo', 'password':'foo'}, {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
         .then(res => {
-            localStorage.setItem('access_token', res.data.access)
+            console.log(res.data)
+            localStorage.setItem('access_token', res.data.jwt)
+            console.log(localStorage.getItem('access_token'))
             dispatch({
                 type: 'USER_LOGIN',
-                payload: res.data.access
+                payload: res.data.jwt
             })
         })
         .catch(err => {
