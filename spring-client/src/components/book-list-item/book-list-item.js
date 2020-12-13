@@ -31,9 +31,9 @@ const BookListItem = ({ product, bookAddedToCart, deleteArticle, isAuth }) => {
                         <div className="book-price">Count: {count}</div>
 
                     </Card.Text>
-                    <button onClick={bookAddedToCart} className="btn btn-info add-to-cart">Add to cart</button>
-                    {EditButthon}
-                    {DeleteButthon}
+                    {isAuth ? AddButthon : ''}
+                    {isAuth ? EditButthon : ''}
+                    {isAuth ? DeleteButthon : ''}
                 </Card.Body>
                 {/*<button onClick={deleteArticle} className="btn btn-info add-to-cart">Delete</button>*/}
 

@@ -40,7 +40,7 @@ class BookDetail extends Component{
 
     componentDidMount() {
         let id = this.props.match.params.id;
-        axios.get('/api/v1/admin/products/' + id)
+        axios.get('/api/v1/admin/products/list/' + id)
             .then(res => {
                 this.setState({
                     ...this.state,

@@ -20,7 +20,7 @@ class Misc extends Component {
 
     componentDidMount() {
 
-        axios.get('/api/v1/admin/products/' + this.props.match.params.id)
+        axios.get('/api/v1/admin/products/list/' + this.props.match.params.id)
             .then(res => {
                 const data = res.data; // get the data array instead of object
                 this.setState({ data, loading: false });

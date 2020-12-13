@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5052b1cd-3a36-44c9-8c0a-08c0633f9b06" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="5052b1cd-3a36-44c9-8c0a-08c0633f9b06" name="Default Changelist" comment="added node_modules in gitignore">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul-service/src/main/java/kz/iitu/zuulservice/security/SecurityConfigurer.java" beforeDir="false" afterPath="$PROJECT_DIR$/zuul-service/src/main/java/kz/iitu/zuulservice/security/SecurityConfigurer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,8 +41,19 @@
       <updated>1604575425622</updated>
       <workItem from="1604575430291" duration="64000" />
       <workItem from="1604593549931" duration="418000" />
-      <workItem from="1607579097749" duration="73000" />
+      <workItem from="1607579097749" duration="235000" />
+      <workItem from="1607766230754" duration="31000" />
+      <workItem from="1607770525835" duration="473000" />
+      <workItem from="1607855657591" duration="134000" />
     </task>
+    <task id="LOCAL-00001" summary="added node_modules in gitignore">
+      <created>1607579239359</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1607579239359</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -58,5 +69,10 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added node_modules in gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="added node_modules in gitignore" />
   </component>
 </project>

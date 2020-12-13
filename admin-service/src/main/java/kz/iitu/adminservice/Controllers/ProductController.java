@@ -46,7 +46,7 @@ public class ProductController {
     }
 
 
-    @GetMapping("/{id}")
+    @GetMapping("/list/{id}")
     @HystrixCommand(fallbackMethod = "getFallBackProduct",
             threadPoolKey = "productInfoPool",
             threadPoolProperties = {
