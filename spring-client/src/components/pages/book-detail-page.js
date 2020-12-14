@@ -99,7 +99,7 @@ class BookDetail extends Component{
                     <Col span={16} >
                         <h2>{this.state.product.name}</h2>
                         <p>Price: ${this.state.product.price}</p>
-                        {addButton}
+                        {this.props.auth ? addButton : ''}
                     </Col>
                 </Row>
                     <div>
