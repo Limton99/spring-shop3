@@ -13,7 +13,7 @@ const BookListItem = ({ product, bookAddedToCart, deleteArticle, isAuth }) => {
     const EditButthon = (<Link to={`/books/edit/${id}`} className="btn btn-primary">Edit item</Link>);
     const DeleteButthon = (<button onClick={deleteArticle} className="btn btn-info add-to-cart">Delete</button>);
     const AddButthon = (<button onClick={bookAddedToCart} className="btn btn-info add-to-cart">Add to cart</button>);
-
+    console.log(localStorage.getItem('access_token'));
     return (
         <Fragment>
 

@@ -5,12 +5,25 @@ import axios from 'axios'
 const updateAuth = (state, action) => {
 
     if (state === undefined) {
+        if(!localStorage.getItem('access_token'))
+        {
+            return {
+                isAuth: false,
+                currentUserId: null,
+                signUpSuccess: false,
+                username: null
+            };
+        }
+
+        axios.defaults.headers.common["Authorization"] = `Bearer ${localStorage.getItem('access_token')}`
+        console.log(localStorage.getItem('access_token'));
         return {
-            isAuth: false,
-            currentUserId: null,
+            isAuth: true,
+            currentUserId: localStorage.getItem('access_token'),
             signUpSuccess: false,
-            username: null
+            username: localStorage.getItem('access_token')
         };
+
     }
 
     // console.log(action)

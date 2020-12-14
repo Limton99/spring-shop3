@@ -1,0 +1,72 @@
+version: '3'
+services:
+    database:
+        image: mysql:latest
+        restart: always
+        environment:
+            MYSQL_DATABASE: spring3
+            MYSQL_ROOT_PASSWORD: 123456
+
+    adminer:
+        image: adminer
+        restart: always
+        ports:
+        - 6080:8080
+
+
+    discovery-service:
+        container_name: discovery-service
+        build:
+            context: ./discovery-service
+        image: discovery-service:latest
+        ports:
+            - 8761:8761
+        environment:
+            eureka.instance.hostname: discovery-service
+            eureka.client.serviceUrl.defaultZone: http://discovery-service:8761/eureka/
+
+
+    zuul-service:
+        container_name: zuul-service
+        build:
+            context: ./zuul-service
+        image: zuul-service:latest
+        ports:
+            - 8762:8762
+        depends_on:
+            - discovery-service
+        environment:
+            eureka.client.serviceUrl.defaultZone: http://discovery-service:8761/eureka/
+        
+        
+
+
+    product-service:
+        container_name: product-service
+        build:
+            context: ./product-service
+        image: product-service:latest
+        ports:
+            - 8081:8081
+        environment:
+            SPRING_DATASOURCE_URL: jdbc:mysql://database:3306/spring3
+            SPRING_DATASOURCE_USERNAME: root
+            SPRING_DATASOURCE_PASSWORD: 123456
+            eureka.client.serviceUrl.defaultZone: http://discovery-service:8761/eureka/
+        depends_on:
+            - discovery-service
+            
+
+
+    admin-service:
+        container_name: admin-service
+        build:
+            context: ./admin-service
+        image: admin-service:latest
+        ports:
+            - 8084:8084
+        depends_on:
+            - discovery-service
+        environment:
+            eureka.client.serviceUrl.defaultZone: http://discovery-service:8761/eureka/
+    

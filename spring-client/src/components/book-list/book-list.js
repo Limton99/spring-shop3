@@ -68,7 +68,7 @@ class BookListContainer extends Component{
         }
         return (
             <React.Fragment>
-                {AddButton}
+                {isAuth ? AddButton : ''}
                          <BookList  products={products} bookAddedToCart={bookAddedToCart} deleteArticle={deleteArticle} isAuth={isAuth}/>
                 <ModalBook modalBlogVisible={this.state.modalBlogVisible} close={closeModal}/>
 

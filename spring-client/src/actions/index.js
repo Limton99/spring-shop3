@@ -141,7 +141,6 @@ export const logIn = (user) => dispatch =>{
         .then(res => {
             console.log(res.data)
             localStorage.setItem('access_token', res.data.jwt)
-            console.log(localStorage.getItem('access_token'))
             dispatch({
                 type: 'USER_LOGIN',
                 payload: res.data.jwt
