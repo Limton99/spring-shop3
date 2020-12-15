@@ -70,4 +70,4 @@ DELETE for delete product or user
 
 
 4.   Communicate with microservices
-<img src="https://drive.google.com/uc?export=view&id=1vLVzFYRHIvFhfCEmILXHtF9ZS9PKFuh8" />
+<img src="https://drive.google.com/uc?export=view&id=1opyCbbmet7e7b9OnHDYAwK7wH095hq0i" />
